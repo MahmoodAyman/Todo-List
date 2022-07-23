@@ -1,14 +1,52 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="style.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
     <title>Todo list</title>
-</head>
-<body>
-
+  </head>
+  <body>
+    <div class="landing">
+      <h1 style="text-align: center">Todo List</h1>
+    </div>
+    <section id="todo_list">
+      <div id="add_new_task">
+        <label>Add New Task:</label>
+        <div class="new_task_info">
+          <input type="text" id="new_task_name" placeholder="Add new task" />
+          <input type="submit" id="new_add_button" value="Add" />
+        </div>
+      </div>
+      <div class="task_list">
+        <span>Tasks:</span>
+        <ol>
+          <li id="task1">
+            <div id="todo_task_name">Task1</div>
+            <div id="todo_task_ops">
+              <input type="submit" id="new_add_button" value="Done" />
+              <button class="task_edit">Edit</button>
+              <button class="task_delete">Delete</button>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+    <section id="done">
+        <div class="task_list">
+            <span>Recent Finished Tasks:</span>
+            <ol>
+              <li id="task1">
+                <div id="done_task_name">Task1</div>
+                <div id="done_task_ops">
+                    <button class="return_back_button">back to Todo list</button>
+                  <button class="task_delete">Delete</button>
+                </div>
+              </li>
+            </ol>
+          </div>
+    </section>
     <script src="script.js"></script>
-</body>
+  </body>
 </html>
