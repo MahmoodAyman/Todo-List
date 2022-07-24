@@ -151,9 +151,14 @@ section {
               color: $primary-color;
             }
           }
+          &:hover .task_operations {
+            transform: scale(1);
+          }
           .task_operations {
-            display: none;
+            transform: scale(0);
             position: absolute;
+            transition: transform 0.2s ease;
+            transform-origin: top right;
             background-color: $hover-bg;
             padding: 10px;
             color: $primary-color;
@@ -161,9 +166,6 @@ section {
             top: 75%;
             right: 40%;
             z-index: 2;
-            &.active {
-              display: block;
-            }
             li {
               display: flex;
               justify-content: flex-start;
@@ -179,7 +181,7 @@ section {
               }
               &.delete_task {
                 color: $danger-color-hover;
-                i{
+                i {
                   color: $danger-color-hover;
                   &:hover {
                     color: $danger-color-hover;

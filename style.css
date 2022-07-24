@@ -144,9 +144,14 @@ section .task_list .task_box .task .task_controls i {
 section .task_list .task_box .task .task_controls i:hover {
   color: #1d262d;
 }
+section .task_list .task_box .task .task_controls:hover .task_operations {
+  transform: scale(1);
+}
 section .task_list .task_box .task .task_controls .task_operations {
-  display: none;
+  transform: scale(0);
   position: absolute;
+  transition: transform 0.2s ease;
+  transform-origin: top right;
   background-color: #e7f6f2;
   padding: 10px;
   color: #1d262d;
@@ -154,9 +159,6 @@ section .task_list .task_box .task .task_controls .task_operations {
   top: 75%;
   right: 40%;
   z-index: 2;
-}
-section .task_list .task_box .task .task_controls .task_operations.active {
-  display: block;
 }
 section .task_list .task_box .task .task_controls .task_operations li {
   display: flex;
