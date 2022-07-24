@@ -4,48 +4,71 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
     <title>Todo list</title>
   </head>
   <body>
-    <div class="landing">
-      <h1 style="text-align: center">Todo List</h1>
-    </div>
-    <section id="todo_list">
-      <div id="add_new_task">
-        <label>Add New Task:</label>
-        <div class="new_task_info">
-          <input type="text" id="new_task_name" placeholder="Add new task" />
-          <input type="submit" id="new_add_button" value="Add" />
+    <section class="todo_list">
+      <div class="task_input">
+        <i class="fa-solid fa-plus"></i>
+        <input type="text" name="" id="" placeholder="New Task" />
+        <input type="submit" value="Add" />
+      </div>
+      <div class="task_list_control">
+        <div class="filters">
+          <span id="all_tasks" class="active">Inbox</span>
+          <span id="completed_tasks">Completed</span>
         </div>
+        <button class="clear_btn">Clear All</button>
       </div>
       <div class="task_list">
-        <span>Tasks:</span>
-        <ol>
-          <li id="task1">
-            <div id="todo_task_name">Task1</div>
-            <div id="todo_task_ops">
-              <input type="submit" id="new_add_button" value="Done" />
-              <button class="task_edit">Edit</button>
-              <button class="task_delete">Delete</button>
+        <ul class="task_box">
+          <li class="task">
+            <label for="task1">
+              <input type="checkbox" name="" id="task1" />
+              <p>Woke up at 8 clock</p>
+            </label>
+            <div class="task_controls">
+              <i class="fa-solid fa-ellipsis"></i>
             </div>
           </li>
-        </ol>
+
+          <li class="task">
+            <label for="task2">
+              <input type="checkbox" name="" id="task2" />
+              <p>Woke up at 8 clock</p>
+            </label>
+            <div class="task_controls">
+              <i class="fa-solid fa-ellipsis"></i>
+            </div>
+          </li>
+
+          <li class="task">
+            <label for="task3">
+              <input type="checkbox" name="" id="task3" />
+              <p>Woke up at 8 clock</p>
+            </label>
+            <div class="task_controls">
+              <i class="fa-solid fa-ellipsis"></i>
+            </div>
+          </li>
+
+          <li class="task">
+            <label for="task4">
+              <input type="checkbox" name="" id="task4" />
+              <p>Woke up at 8 clock</p>
+            </label>
+            <div class="task_controls">
+              <i class="fa-solid fa-ellipsis"></i>
+            </div>
+          </li>
+          
+        </ul>
       </div>
-    </section>
-    <section id="done">
-        <div class="task_list">
-            <span>Recent Finished Tasks:</span>
-            <ol>
-              <li id="task1">
-                <div id="done_task_name">Task1</div>
-                <div id="done_task_ops">
-                    <button class="return_back_button">back to Todo list</button>
-                  <button class="task_delete">Delete</button>
-                </div>
-              </li>
-            </ol>
-          </div>
     </section>
     <script src="script.js"></script>
   </body>
