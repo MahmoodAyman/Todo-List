@@ -10,6 +10,10 @@
   background: transparent;
 }
 
+ul {
+  list-style: none;
+}
+
 body {
   background-color: #1d262d;
   color: white;
@@ -59,7 +63,7 @@ section .task_input input[type=submit] {
   width: 50%;
   height: 100%;
   border-radius: 0px 20px 20px 0px;
-  background-color: #A5C9CA;
+  background-color: #a5c9ca;
   color: #263744;
   border: none;
   cursor: pointer;
@@ -67,7 +71,7 @@ section .task_input input[type=submit] {
   transition: 0.1s all ease;
 }
 section .task_input input[type=submit]:hover {
-  background-color: #E7F6F2;
+  background-color: #e7f6f2;
   color: #1d262d;
 }
 section .task_list_control {
@@ -85,19 +89,19 @@ section .task_list_control .filters span {
   padding: 10px;
   font-weight: 600;
   border-radius: 20px;
-  background-color: #A5C9CA;
+  background-color: #a5c9ca;
 }
 section .task_list_control .filters span.active {
-  background-color: #E7F6F2;
+  background-color: #e7f6f2;
 }
 section .task_list_control .filters span:hover {
-  background-color: #E7F6F2;
+  background-color: #e7f6f2;
 }
 section .task_list_control .filters span::first-child {
   margin-left: 0;
 }
 section .task_list_control button {
-  background-color: #FF5252;
+  background-color: #ff5252;
   color: #263744;
   border: none;
   padding: 10px;
@@ -128,6 +132,55 @@ section .task_list .task_box .task label {
   display: flex;
   justify-content: space-around;
 }
+section .task_list .task_box .task label p {
+  margin-left: 10px;
+}
+section .task_list .task_box .task .task_controls {
+  position: relative;
+}
 section .task_list .task_box .task .task_controls i {
   cursor: pointer;
+}
+section .task_list .task_box .task .task_controls i:hover {
+  color: #1d262d;
+}
+section .task_list .task_box .task .task_controls .task_operations {
+  display: none;
+  position: absolute;
+  background-color: #e7f6f2;
+  padding: 10px;
+  color: #1d262d;
+  border-radius: 20px 0 20px 20px;
+  top: 75%;
+  right: 40%;
+  z-index: 2;
+}
+section .task_list .task_box .task .task_controls .task_operations.active {
+  display: block;
+}
+section .task_list .task_box .task .task_controls .task_operations li {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px;
+  border-radius: 20px;
+}
+section .task_list .task_box .task .task_controls .task_operations li:hover {
+  background-color: #a5c9ca;
+}
+section .task_list .task_box .task .task_controls .task_operations li i {
+  padding-right: 8px;
+}
+section .task_list .task_box .task .task_controls .task_operations li.delete_task {
+  color: #f73535;
+}
+section .task_list .task_box .task .task_controls .task_operations li.delete_task i {
+  color: #f73535;
+}
+section .task_list .task_box .task .task_controls .task_operations li.delete_task i:hover {
+  color: #f73535;
+}
+section .task_list .task_box .task .task_controls .task_operations li.edit_task {
+  color: #1d262d;
 }/*# sourceMappingURL=style.css.map */

@@ -1,11 +1,11 @@
 @import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap");
 
 // variables
-$hover-bg: #E7F6F2;
-$bg-color:#263744;
-$secondary-color: #A5C9CA;
+$hover-bg: #e7f6f2;
+$bg-color: #263744;
+$secondary-color: #a5c9ca;
 $primary-color: #1d262d;
-$danger-color: #FF5252;
+$danger-color: #ff5252;
 $danger-color-hover: #f73535;
 // genral roles
 
@@ -14,132 +14,182 @@ $danger-color-hover: #f73535;
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  ::-webkit-scrollbar{
+  ::-webkit-scrollbar {
     width: 2px;
     background: transparent;
   }
+}
+ul {
+  list-style: none;
 }
 body {
   background-color: #1d262d;
   color: white;
 }
-section{
+section {
   background-color: #263744;
   max-width: 400px;
   max-height: 520px;
-  overflow-y:scroll ;
+  overflow-y: scroll;
   margin: 150px auto;
-  padding:20px;
+  padding: 20px;
   border-radius: 20px 40px;
-  box-shadow: 0px 0px 20px rgba(38,55,68,0.7);
+  box-shadow: 0px 0px 20px rgba(38, 55, 68, 0.7);
   transition: 0.3s all ease;
-  &:hover{
-    box-shadow: 20px 20px 20px rgba(38,55,68,0.2);
+  &:hover {
+    box-shadow: 20px 20px 20px rgba(38, 55, 68, 0.2);
   }
-  .task_input{
+  .task_input {
     height: 50px;
     display: flex;
     align-items: cetner;
     position: relative;
-    input[type="text"]{
-      width:100%;
+    input[type="text"] {
+      width: 100%;
       height: 100%;
       border-radius: 20px 0px 0px 20px;
       background-color: #1d262d;
-      padding:25px;
-      border:none;
+      padding: 25px;
+      border: none;
       color: white;
       font-size: 15px;
-      &:focus{
+      &:focus {
         outline: none;
       }
     }
-    i{
+    i {
       position: absolute;
       z-index: 1;
-      top:35%;
-      left:2%;
+      top: 35%;
+      left: 2%;
       color: #8e8e8e;
     }
-    input[type="submit"]{
-      width:50%;
+    input[type="submit"] {
+      width: 50%;
       height: 100%;
       border-radius: 0px 20px 20px 0px;
-      background-color:$secondary-color;
-      color:$bg-color;
+      background-color: $secondary-color;
+      color: $bg-color;
       // padding:25px;
-      border:none;
+      border: none;
       cursor: pointer;
       font-weight: 600;
       transition: 0.1s all ease;
-      &:hover{
-        background-color:$hover-bg;
+      &:hover {
+        background-color: $hover-bg;
         color: #1d262d;
       }
     }
   }
-  .task_list_control{
-    padding:25px;
+  .task_list_control {
+    padding: 25px;
     border-bottom: 1px solid #1d262d;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    .filters{
-      span{
-        margin:0 8px;
+    .filters {
+      span {
+        margin: 0 8px;
         font-size: 15px;
         cursor: pointer;
-        color:$bg-color;
-        padding:10px;
-        font-weight:600;
+        color: $bg-color;
+        padding: 10px;
+        font-weight: 600;
         border-radius: 20px;
-        background-color:$secondary-color;
-        &.active{
-          background-color:$hover-bg;
+        background-color: $secondary-color;
+        &.active {
+          background-color: $hover-bg;
         }
-        &:hover{
-          background-color:$hover-bg;
+        &:hover {
+          background-color: $hover-bg;
         }
-        &::first-child{
-          margin-left:0;
+        &::first-child {
+          margin-left: 0;
         }
       }
     }
-    button{
-     background-color:$danger-color;
+    button {
+      background-color: $danger-color;
       color: $bg-color;
-      border:none;
-      padding:10px;
+      border: none;
+      padding: 10px;
       border-radius: 20px;
       cursor: pointer;
       font-weight: 600;
       transition: 0.1s all ease;
-      &:hover{
-        background-color:$danger-color-hover;
+      &:hover {
+        background-color: $danger-color-hover;
         color: #1d262d;
       }
     }
   }
-  .task_list{
-    .task_box{
-      margin:20px 25px;
-      .task{
+  .task_list {
+    .task_box {
+      margin: 20px 25px;
+      .task {
         list-style: none;
         display: flex;
         align-items: center;
         justify-content: space-between;
-        padding:10px;
+        padding: 10px;
         margin-bottom: 10px;
         border-bottom: 1px solid #1d262d;
         padding-bottom: 18px;
         font-size: 17px;
-        label{
+        label {
           display: flex;
           justify-content: space-around;
+          p {
+            margin-left: 10px;
+          }
         }
-        .task_controls{
-          i{
+        .task_controls {
+          position: relative;
+          i {
             cursor: pointer;
+            &:hover {
+              color: $primary-color;
+            }
+          }
+          .task_operations {
+            display: none;
+            position: absolute;
+            background-color: $hover-bg;
+            padding: 10px;
+            color: $primary-color;
+            border-radius: 20px 0 20px 20px;
+            top: 75%;
+            right: 40%;
+            z-index: 2;
+            &.active {
+              display: block;
+            }
+            li {
+              display: flex;
+              justify-content: flex-start;
+              align-items: center;
+              cursor: pointer;
+              padding: 10px;
+              border-radius: 20px;
+              &:hover {
+                background-color: $secondary-color;
+              }
+              i {
+                padding-right: 8px;
+              }
+              &.delete_task {
+                color: $danger-color-hover;
+                i{
+                  color: $danger-color-hover;
+                  &:hover {
+                    color: $danger-color-hover;
+                  }
+                }
+              }
+              &.edit_task {
+                color: $primary-color;
+              }
+            }
           }
         }
       }

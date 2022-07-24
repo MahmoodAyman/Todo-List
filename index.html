@@ -20,7 +20,9 @@
       </div>
       <div class="task_list_control">
         <div class="filters">
-          <span id="all_tasks" class="active">Inbox</span>
+          <span id="all_tasks" class="active" style="margin-left: -20px"
+            >Inbox</span
+          >
           <span id="completed_tasks">Completed</span>
         </div>
         <button class="clear_btn">Clear All</button>
@@ -34,6 +36,10 @@
             </label>
             <div class="task_controls">
               <i class="fa-solid fa-ellipsis"></i>
+              <ul class="task_operations active">
+                <li class="edit_task"><i class="fa-solid fa-pen-clip"></i>Edit</li>
+                <li class="delete_task"><i class="fa-solid fa-trash"></i>Delete</li>
+              </ul>
             </div>
           </li>
 
@@ -66,7 +72,6 @@
               <i class="fa-solid fa-ellipsis"></i>
             </div>
           </li>
-          
         </ul>
       </div>
     </section>
