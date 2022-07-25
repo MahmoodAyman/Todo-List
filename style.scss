@@ -87,7 +87,6 @@ section {
     color: $danger-color;
     font-size: 15px;
     margin-top: 5px;
-    left: 29%;
     transition: 0.1s ease-in-out all;
   }
   .task_list_control {
@@ -152,11 +151,14 @@ section {
           align-items: center;
           p {
             margin-left: 10px;
+            &.completed {
+              text-decoration: line-through;
+            }
           }
-          #task_name{
+          #task_name {
             width: 80%;
             height: 20%;
-            border-radius:20px 0 0 20px;
+            border-radius: 20px 0 0 20px;
             background-color: #1d262d;
             padding: 15px;
             border: none;
@@ -166,7 +168,7 @@ section {
               outline: none;
             }
           }
-          .save_task{
+          .save_task {
             width: 20%;
             height: 100%;
             border-radius: 0 20px 20px 0;

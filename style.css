@@ -80,7 +80,6 @@ section #error_msg {
   color: #ff5252;
   font-size: 15px;
   margin-top: 5px;
-  left: 29%;
   transition: 0.1s ease-in-out all;
 }
 section .task_list_control {
@@ -145,6 +144,9 @@ section .task_list .task_box .task label {
 }
 section .task_list .task_box .task label p {
   margin-left: 10px;
+}
+section .task_list .task_box .task label p.completed {
+  text-decoration: line-through;
 }
 section .task_list .task_box .task label #task_name {
   width: 80%;
