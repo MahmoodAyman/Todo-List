@@ -16,9 +16,11 @@
     <section class="todo_list">
       <div class="task_input">
         <i class="fa-solid fa-plus"></i>
-        <input type="text" name="" id="" placeholder="New Task" />
-        <input type="submit" value="Add" />
+        <input type="text" name="" id="task_name" placeholder="New Task" />
+        <input type="submit" value="Add" id="add_task_btn" />
+       
       </div>
+      <div id="error_msg">Enter Task Name</div>
       <div class="task_list_control">
         <div class="filters">
           <span id="all_tasks" class="active" style="margin-left: -20px"
@@ -30,18 +32,18 @@
       </div>
       <div class="task_list">
         <ul class="task_box">
-          <li class="task">
+          <!-- <li class="task" id="task_1">
             <label for="task1">
               <input type="checkbox" name="" id="task1" />
               <p>Woke up at 8 clock</p>
             </label>
-            <div class="task_controls">
+            <div class="task_controls" id="taskContorls1">
               <i class="fa-solid fa-ellipsis"></i>
               <ul class="task_operations">
-                <li class="edit_task">
+                <li class="edit_task" onclick="edit_task('1')">
                   <i class="fa-solid fa-pen-clip"></i>Edit
                 </li>
-                <li class="delete_task">
+                <li class="delete_task" onclick="delete_task('1')">
                   <i class="fa-solid fa-trash"></i>Delete
                 </li>
               </ul>
@@ -76,7 +78,7 @@
             <div class="task_controls">
               <i class="fa-solid fa-ellipsis"></i>
             </div>
-          </li>
+          </li> -->
         </ul>
       </div>
     </section>
