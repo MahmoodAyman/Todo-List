@@ -15,7 +15,7 @@ addTaskBtn.addEventListener("click", function (evt) {
     new_task.classList.add("task");
     new_task.id = `task_${i}`;
     new_task.innerHTML = `<label for="task${i}">
-      <input type="checkbox" onclick="markAsComplete('1')" name="" id="task${i}" />
+      <input type="checkbox" onclick="markAsComplete('${i}')" name="" id="task${i}" />
       <p>${taskName.value}</p>
     </label>
     <div class="task_controls" id="taskControls${i}">
@@ -90,10 +90,20 @@ function markAsComplete(id) {
   let task = document.getElementById(`task_${id}`);
   if (task.querySelector("input").checked) {
     task.querySelector("p").classList.add("completed");
-    tasks[id].status = "true";
+    completedTasks.push(task);
+    taskList.removeChild(task);
   } else {
     task.querySelector("p").classList.remove("completed");
-    completedTasks.splice(completedTasks.indexOf(task), 1);
   }
   localStorage.setItem("tasks", JSON.stringify(tasks));
 }
+let completed_Tasks = document.getElementById("completed_tasks");
+let f = 0;
+completed_Tasks.addEventListener('click', function showCompletedTasks(e) {
+    if (completedTasks&&!f) {
+        completedTasks.forEach((element, i) => {
+          taskList.appendChild(element);
+        });
+    }
+});
+
