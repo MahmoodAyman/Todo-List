@@ -99,11 +99,27 @@ function markAsComplete(id) {
 }
 let completed_Tasks = document.getElementById("completed_tasks");
 let f = 0;
-completed_Tasks.addEventListener('click', function showCompletedTasks(e) {
-    if (completedTasks&&!f) {
-        completedTasks.forEach((element, i) => {
-          taskList.appendChild(element);
-        });
-    }
+let allTasks = document.getElementById("all_tasks");
+completed_Tasks.addEventListener("click", function showCompletedTasks(e) {
+  completed_Tasks.classList.add("active");
+  allTasks.classList.remove("active");
+  if (completedTasks) {
+    completedTasks.forEach((element, i) => {
+      taskList.appendChild(element);
+    });
+  }
 });
-
+allTasks.addEventListener("click", function showAllTasks(e) {
+  completed_Tasks.classList.remove("active");
+  allTasks.classList.add("active");
+  while (completedTasks.length > 0) {
+    completedTasks.pop();
+  }
+  for (let i = 1; i < taskList.children.length; i++) {
+    let task = taskList.children[i];
+    if (task.querySelector("p").classList.contains("completed")) {
+      completedTasks.push(task);
+      taskList.removeChild(task);
+    }
+  }
+});
